@@ -7,62 +7,41 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular/build:application",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@analogjs/platform:vite",
       "options": {
-        "outputPath": "dist/apps/app",
-        "browser": "apps/app/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/app/tsconfig.app.json",
-        "assets": [
-          {
-            "glob": "**/*",
-            "input": "apps/app/public"
-          }
-        ],
-        "styles": ["apps/app/src/styles.css"],
-        "server": "apps/app/src/main.server.ts",
-        "ssr": {
-          "entry": "apps/app/src/server.ts"
-        },
-        "outputMode": "server"
+        "configFile": "apps/app/vite.config.ts",
+        "main": "apps/app/src/main.ts",
+        "outputPath": "dist/apps/app/client",
+        "tsConfig": "apps/app/tsconfig.app.json"
       },
+      "defaultConfiguration": "production",
       "configurations": {
-        "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
-            }
-          ],
-          "outputHashing": "all"
-        },
         "development": {
-          "optimization": false,
-          "extractLicenses": false,
-          "sourceMap": true
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
         }
       },
-      "defaultConfiguration": "production"
+      "outputs": ["{workspaceRoot}/dist/apps/app"]
     },
     "serve": {
-      "continuous": true,
-      "executor": "@angular/build:dev-server",
+      "executor": "@analogjs/platform:vite-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "app:build",
+        "port": 4200
+      },
       "configurations": {
+        "development": {
+          "buildTarget": "app:build:development",
+          "hmr": true
+        },
         "production": {
           "buildTarget": "app:build:production"
-        },
-        "development": {
-          "buildTarget": "app:build:development"
         }
-      },
-      "defaultConfiguration": "development"
+      }
     },
     "extract-i18n": {
       "executor": "@angular/build:extract-i18n",
@@ -74,10 +53,9 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "executor": "@analogjs/vitest-angular:test",
       "options": {
-        "reportsDirectory": "../../coverage/apps/app"
+        "config": "vite.config.ts"
       }
     },
     "serve-static": {

@@ -1,82 +1,69 @@
-# AnalogStarter
+# AnalogJS Starter with Auth
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+Welcome to the **AnalogJS Starter** project! This repository provides a modern kickstart for building AnalogJS applications, including a ready-to-use authentication setup. It is designed to help you quickly bootstrap new projects with best practices and a robust foundation.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## Features
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- **AnalogJS**: Modern meta-framework for building fullstack applications with Angular.
+- **Authentication**: Built-in authentication flow to get you started securely.
+- **Vite**: Fast build and development server.
+- **Nx**: Powerful monorepo tooling for scalable development.
+- **TypeScript**: Type-safe codebase for reliability and maintainability.
 
-## Finish your CI setup
+## Getting Started
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/qThLo1p61I)
+### Prerequisites
 
+- Node.js (v18 or higher recommended)
+- pnpm, npm, or yarn
 
-## Run tasks
+### Installation
 
-To run the dev server for your app, use:
+Clone the repository and install dependencies:
+
+```sh
+git clone <your-repo-url>
+cd analog-starter
+pnpm install # or npm install or yarn install
+```
+
+### Running the App
+
+Start the development server:
 
 ```sh
 npx nx serve app
 ```
 
-To create a production bundle:
+The app will be available at `http://localhost:4200` (or the port shown in your terminal).
+
+### Building for Production
 
 ```sh
 npx nx build app
 ```
 
-To see all available targets to run for a project, run:
+### Running Tests
 
 ```sh
-npx nx show project app
+npx nx test app
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+## Project Structure
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- `apps/app/` - Main AnalogJS application
+- `apps/app-e2e/` - End-to-end tests (Playwright)
+- `apps/app/src/server/routes/api/v1/hello.ts` - Example API route
 
-## Add new projects
+## Authentication
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+This starter includes a basic authentication setup. You can extend or replace it to fit your needs. Look for auth-related files and logic in the `apps/app/src/app/` directory.
 
-Use the plugin's generator to create new projects.
+## Resources
+- [AnalogJS Documentation](https://analogjs.org/)
+- [Nx Documentation](https://nx.dev/)
+- [Vite Documentation](https://vitejs.dev/)
 
-To generate a new application, use:
+---
 
-```sh
-npx nx g @nx/angular:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/angular:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Kickstart your next AnalogJS project with built-in auth and best practices!
